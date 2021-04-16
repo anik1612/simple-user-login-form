@@ -48,22 +48,24 @@ const Home = () => {
 								<div className='card-body p-4'>
 									<input
 										type='text'
-										className='form-control mb-3'
+										className='form-control'
 										{...register('name', {
 											required: true,
 										})}
 										placeholder='Enter your name'
 									/>
+									{errors.name && <span className='text-danger'>This field is required</span>}
 									<input
 										type='text'
-										className='form-control mb-3'
+										className='form-control mt-3'
 										{...register('email', {
 											required: true,
 										})}
 										placeholder='Enter your email'
 									/>
+									{errors.email && <span className='text-danger'>This field is required</span>}
 									<input
-										className='form-control mb-3'
+										className='form-control mt-3'
 										type='file'
 										name='image'
 										onChange={handleImage}
