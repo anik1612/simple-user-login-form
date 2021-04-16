@@ -4,6 +4,7 @@ import axios from 'axios';
 
 const Home = () => {
 	const [photo, setPhoto] = useState(null);
+	const [disable, setDisable] = useState(true)
 	const [serverResponse, setServerResponse] = useState({});
 
 	console.log(serverResponse);
@@ -33,6 +34,7 @@ const Home = () => {
 
 	const handleImage = (event) => {
 		setPhoto(event.target.files[0]);
+		setDisable(false)
 	};
 
 	return (
@@ -77,6 +79,7 @@ const Home = () => {
 											className='btn btn-block btn-success'
 											type='submit'
 											value='submit'
+											disabled={disable}
 										/>
 									</div>
 								</div>
